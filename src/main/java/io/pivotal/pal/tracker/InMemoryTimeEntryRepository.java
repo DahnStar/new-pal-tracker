@@ -1,7 +1,5 @@
 package io.pivotal.pal.tracker;
 
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,7 +9,6 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
 
     private HashMap<Long, TimeEntry> map = new HashMap<>();
     private AtomicLong sequence = new AtomicLong();
-
 
     public TimeEntry create(TimeEntry timeEntry) {
         Long id = sequence.incrementAndGet();
